@@ -20,7 +20,7 @@ Install packages:
 
 sudo apt-get install curl apt-transport-https -y
 
-sudo apt-get install --no-install-recommends qemu-system libvirt-clients libvirt-daemon-system
+sudo apt-get install --no-install-recommends qemu-system libvirt-clients libvirt-daemon-system && reboot
 
 MiniKube:
 
@@ -36,6 +36,7 @@ minikube version: v1.23.2
 commit: 0a0ad764652082477c00d51d2475284b5d39ceed
 
 Kubectl:
+
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 
 chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
@@ -60,6 +61,7 @@ pegaz@peg01:~$ kubectl version -o json
 Start Minikube:
 
 minikube start
+
 
 
 
