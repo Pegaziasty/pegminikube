@@ -28,7 +28,9 @@ sudo cp minikube-linux-amd64 /usr/local/bin/minikube && sudo chmod 755 /usr/loca
 
 
 pegaz@ubuntu:~/mkube$ minikube version
+
 minikube version: v1.23.2
+
 commit: 0a0ad764652082477c00d51d2475284b5d39ceed
 
 
@@ -38,7 +40,7 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s http
 
 chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
 
-pegaz@peg01:~$ kubectl version -o json
+pegaz@ubuntu:~/mkube$ kubectl version -o json
 
 {
   "clientVersion": {
@@ -54,10 +56,33 @@ pegaz@peg01:~$ kubectl version -o json
   }
 }
 
-
 Start Minikube:
 
-minikube start
+pegaz@ubuntu:~/mkube$ minikube start
+😄  minikube v1.23.2 on Ubuntu 20.04
+✨  Automatically selected the kvm2 driver
+💾  Downloading driver docker-machine-driver-kvm2:
+    > docker-machine-driver-kvm2....: 65 B / 65 B [----------] 100.00% ? p/s 0s
+    > docker-machine-driver-kvm2: 11.40 MiB / 11.40 MiB  100.00% 25.62 MiB p/s 
+💿  Downloading VM boot image ...
+    > minikube-v1.23.1.iso.sha256: 65 B / 65 B [-------------] 100.00% ? p/s 0s
+    > minikube-v1.23.1.iso: 225.22 MiB / 225.22 MiB  100.00% 25.57 MiB p/s 9.0s
+👍  Starting control plane node minikube in cluster minikube
+💾  Downloading Kubernetes v1.22.2 preload ...
+    > preloaded-images-k8s-v13-v1...: 511.69 MiB / 511.69 MiB  100.00% 25.77 Mi
+🔥  Creating kvm2 VM (CPUs=2, Memory=2200MB, Disk=20000MB) ...
+❗  This VM is having trouble accessing https://k8s.gcr.io
+💡  To pull new external images, you may need to configure a proxy: https://minikube.sigs.k8s.io/docs/reference/networking/proxy/
+🐳  Preparing Kubernetes v1.22.2 on Docker 20.10.8 ...
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+
 
 
 
