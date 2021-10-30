@@ -125,6 +125,7 @@ users:
     
     
 pegaz@ubuntu:~/mkube$ kubectl cluster-info
+
 Kubernetes control plane is running at https://192.168.39.49:8443
 CoreDNS is running at https://192.168.39.49:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
@@ -132,11 +133,13 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 
 pegaz@ubuntu:~/mkube$ kubectl get nodes
+
 NAME       STATUS   ROLES                  AGE   VERSION
 minikube   Ready    control-plane,master   91m   v1.22.2
 
 
 pegaz@ubuntu:~/mkube$ minikube ssh
+
                          _             _            
             _         _ ( )           ( )           
   ___ ___  (_)  ___  (_)| |/')  _   _ | |_      __  
@@ -144,20 +147,31 @@ pegaz@ubuntu:~/mkube$ minikube ssh
 | ( ) ( ) || || ( ) || || |\`\ | (_) || |_) )(  ___/
 (_) (_) (_)(_)(_) (_)(_)(_) (_)`\___/'(_,__/'`\____)
 
+
 $ whoami
+
 docker
+
 $ hostname
+
 minikube
+
 $ date
+
 Sat Oct 30 20:14:03 UTC 2021
+
 $ w
+
  20:14:05 up 15 min,  0 users,  load average: 0.97, 0.45, 0.29
 USER     TTY        LOGIN@   IDLE   JCPU   PCPU WHAT
+
 $ exit
+
 logout
 
 
 pegaz@ubuntu:~/mkube$ minikube status
+
 minikube
 type: Control Plane
 host: Running
@@ -166,6 +180,7 @@ apiserver: Running
 kubeconfig: Configured
 
 pegaz@ubuntu:~/mkube$ minikube addons list
+
 |-----------------------------|----------|--------------|-----------------------|
 |         ADDON NAME          | PROFILE  |    STATUS    |      MAINTAINER       |
 |-----------------------------|----------|--------------|-----------------------|
@@ -201,6 +216,7 @@ pegaz@ubuntu:~/mkube$ minikube addons list
 |-----------------------------|----------|--------------|-----------------------|
 
 pegaz@ubuntu:~/mkube$ minikube dashboard
+
 🔌  Enabling dashboard ...
     ▪ Using image kubernetesui/metrics-scraper:v1.0.7
     ▪ Using image kubernetesui/dashboard:v2.3.1
@@ -213,6 +229,7 @@ pegaz@ubuntu:~/mkube$ minikube dashboard
 Or:
 
 pegaz@ubuntu:~/mkube$ minikube dashboard --url
+
 🤔  Verifying dashboard health ...
 🚀  Launching proxy ...
 🤔  Verifying proxy health ...
