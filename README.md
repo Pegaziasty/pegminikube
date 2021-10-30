@@ -20,16 +20,17 @@ sudo apt-get install --no-install-recommends qemu-system libvirt-clients libvirt
 
 MiniKube:
 
+mkdir mkube && cd mkube
+
 wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
-sudo cp minikube-linux-amd64 /usr/local/bin/minikube
+sudo cp minikube-linux-amd64 /usr/local/bin/minikube && sudo chmod 755 /usr/local/bin/minikube
 
-sudo chmod 755 /usr/local/bin/minikube
 
-pegaz@peg01:~$ minikube version
-
+pegaz@ubuntu:~/mkube$ minikube version
 minikube version: v1.23.2
 commit: 0a0ad764652082477c00d51d2475284b5d39ceed
+
 
 Kubectl:
 
