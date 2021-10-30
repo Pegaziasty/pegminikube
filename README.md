@@ -11,6 +11,20 @@ I use KVM and node:
 192.168.122.95 k8s-cluster.peg (2 CPUs, 2048 RAM as minimal)
 
 Update && Upgrade:
-sudo apt-get update -y && sudo apt-get upgrade -y
+sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt autoremove && reboot
+
+Install packages:
+sudo apt-get install curl apt-transport-https -y
+
+MiniKube:
+wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo cp minikube-linux-amd64 /usr/local/bin/minikube
+sudo chmod 755 /usr/local/bin/minikube
+
+
+
+
+
+
 
 
