@@ -8,10 +8,6 @@ The cluster is run inside a virtual machine and includes Docker, allowing you to
 
 To install Minikube on Ubuntu, follow the steps outlined below:
 
-I use KVM and node: 
-
-192.168.122.95 k8s-cluster.peg (2 CPUs, 2048 RAM as minimal)
-
 Update && Upgrade:
 
 sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt autoremove && reboot
