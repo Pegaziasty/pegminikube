@@ -83,6 +83,46 @@ pegaz@ubuntu:~/mkube$ minikube start
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 
 
+Managing Kubernetes with Minikube
+
+To see the kubectl configuration use the command:
+
+kubectl config view
+
+
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: /home/pegaz/.minikube/ca.crt
+    extensions:
+    - extension:
+        last-update: Sat, 30 Oct 2021 20:41:07 CEST
+        provider: minikube.sigs.k8s.io
+        version: v1.23.2
+      name: cluster_info
+    server: https://192.168.39.49:8443
+  name: minikube
+contexts:
+- context:
+    cluster: minikube
+    extensions:
+    - extension:
+        last-update: Sat, 30 Oct 2021 20:41:07 CEST
+        provider: minikube.sigs.k8s.io
+        version: v1.23.2
+      name: context_info
+    namespace: default
+    user: minikube
+  name: minikube
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: minikube
+  user:
+    client-certificate: /home/pegaz/.minikube/profiles/minikube/client.crt
+    client-key: /home/pegaz/.minikube/profiles/minikube/client.key
+
 
 
 
