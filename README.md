@@ -16,21 +16,25 @@ sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt autoremove && rebo
 
 Install packages:
 
+```
 sudo apt-get install curl apt-transport-https -y
 
 sudo apt-get install --no-install-recommends qemu-system libvirt-clients libvirt-daemon-system && reboot
+```
 
 MiniKube:
 
+```
 mkdir mkube && cd mkube
 
 wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
 sudo cp minikube-linux-amd64 /usr/local/bin/minikube && sudo chmod 755 /usr/local/bin/minikube
+```
 
-
+```
 pegaz@ubuntu:~/mkube$ minikube version
-
+```
 minikube version: v1.23.2
 
 commit: 0a0ad764652082477c00d51d2475284b5d39ceed
@@ -38,12 +42,15 @@ commit: 0a0ad764652082477c00d51d2475284b5d39ceed
 
 Kubectl:
 
+```
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 
 chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
+```
 
 pegaz@ubuntu:~/mkube$ kubectl version -o json
 
+```
 {
   "clientVersion": {
     "major": "1",
@@ -57,11 +64,14 @@ pegaz@ubuntu:~/mkube$ kubectl version -o json
     "platform": "linux/amd64"
   }
 }
+```
 
 Start Minikube:
 
 pegaz@ubuntu:~/mkube$ minikube start
-😄  minikube v1.23.2 on Ubuntu 20.04
+
+```
+minikube v1.23.2 on Ubuntu 20.04
 ✨  Automatically selected the kvm2 driver
 💾  Downloading driver docker-machine-driver-kvm2:
     > docker-machine-driver-kvm2....: 65 B / 65 B [----------] 100.00% ? p/s 0s
@@ -83,15 +93,17 @@ pegaz@ubuntu:~/mkube$ minikube start
     ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
 🌟  Enabled addons: storage-provisioner, default-storageclass
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
-
+```
 
 Managing Kubernetes with Minikube
 
 To see the kubectl configuration use the command:
 
+```
 kubectl config view
+```
 
-
+```
 apiVersion: v1
 clusters:
 - cluster:
@@ -124,23 +136,27 @@ users:
   user:
     client-certificate: /home/pegaz/.minikube/profiles/minikube/client.crt
     client-key: /home/pegaz/.minikube/profiles/minikube/client.key
+```    
     
     
 pegaz@ubuntu:~/mkube$ kubectl cluster-info
 
+```
 Kubernetes control plane is running at https://192.168.39.49:8443
 CoreDNS is running at https://192.168.39.49:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
-
+```
 
 pegaz@ubuntu:~/mkube$ kubectl get nodes
 
+```
 NAME       STATUS   ROLES                  AGE   VERSION
 minikube   Ready    control-plane,master   91m   v1.22.2
-
+```
 
 pegaz@ubuntu:~/mkube$ minikube ssh
+```
 
                          _             _            
             _         _ ( )           ( )           
@@ -170,19 +186,22 @@ USER     TTY        LOGIN@   IDLE   JCPU   PCPU WHAT
 $ exit
 
 logout
-
+```
 
 pegaz@ubuntu:~/mkube$ minikube status
 
+```
 minikube
 type: Control Plane
 host: Running
 kubelet: Running
 apiserver: Running
 kubeconfig: Configured
+```
 
 pegaz@ubuntu:~/mkube$ minikube addons list
 
+```
 |-----------------------------|----------|--------------|-----------------------|
 |         ADDON NAME          | PROFILE  |    STATUS    |      MAINTAINER       |
 |-----------------------------|----------|--------------|-----------------------|
@@ -216,9 +235,10 @@ pegaz@ubuntu:~/mkube$ minikube addons list
 | storage-provisioner-gluster | minikube | disabled     | unknown (third-party) |
 | volumesnapshots             | minikube | disabled     | kubernetes            |
 |-----------------------------|----------|--------------|-----------------------|
-
+```
 pegaz@ubuntu:~/mkube$ minikube dashboard
 
+```
 🔌  Enabling dashboard ...
     ▪ Using image kubernetesui/metrics-scraper:v1.0.7
     ▪ Using image kubernetesui/dashboard:v2.3.1
@@ -227,26 +247,20 @@ pegaz@ubuntu:~/mkube$ minikube dashboard
 🤔  Verifying proxy health ...
 🎉  Opening http://127.0.0.1:33713/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
 ^C
+```
 
 Or:
 
+
 pegaz@ubuntu:~/mkube$ minikube dashboard --url
 
-🤔  Verifying dashboard health ...
+
+```
+Verifying dashboard health ...
 🚀  Launching proxy ...
 🤔  Verifying proxy health ...
 http://127.0.0.1:34601/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/
+```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+That is all ! :o) 
